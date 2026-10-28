@@ -1,0 +1,19 @@
+{
+  "run_id": "run_20261028T054419_c53246",
+  "source_file": "events_bad_schema.csv",
+  "status": "FAILED",
+  "started_at": "2026-10-28T05:44:19.147230Z",
+  "ended_at": "2026-10-28T05:44:19.174912Z",
+  "duration_seconds": 0.031,
+  "file_sha256": "c0bc3181916a77698cfded637b1ae2a7e0dad469acbd1a2a7c81e4451a5db396",
+  "input_rows": 0,
+  "accepted_new": 0,
+  "replayed": 0,
+  "rejected": 0,
+  "rejects_by_reason": {},
+  "users_affected": 0,
+  "sessions_written": 0,
+  "unexpected_columns": [],
+  "stage_seconds": {},
+  "error": "SchemaError: missing required columns: ['event_ts']"
+}

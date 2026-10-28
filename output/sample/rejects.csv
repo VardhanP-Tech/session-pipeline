@@ -1,0 +1,8 @@
+run_id,source_file,source_line,reason,detail,raw_record
+run_20261028T054352_8dd045,events.csv,6,missing_timestamp,event_ts is empty,"{""event_id"": ""e00000062"", ""user_id"": ""u00002"", ""event_type"": ""click"", ""event_ts"": """", ""page_url"": ""/x""}"
+run_20261028T054352_8dd045,events.csv,25,missing_required_field,user_id is empty,"{""event_id"": ""e00000063"", ""user_id"": """", ""event_type"": ""click"", ""event_ts"": ""2026-01-07T10:43:54Z"", ""page_url"": ""/x""}"
+run_20261028T054352_8dd045,events.csv,50,malformed_record,too many fields (expected 5),"{""event_id"": ""e00000066"", ""user_id"": ""u00001"", ""event_type"": ""click"", ""event_ts"": ""2026-01-12T02:58:14Z"", ""page_url"": ""/x"", ""_extra_fields"": [""oops""]}"
+run_20261028T054352_8dd045,events.csv,61,invalid_timestamp,cannot parse 'yesterday-ish': timestamp must include a time component,"{""event_id"": ""e00000067"", ""user_id"": ""u00005"", ""event_type"": ""click"", ""event_ts"": ""yesterday-ish"", ""page_url"": ""/x""}"
+run_20261028T054352_8dd045,events.csv,62,invalid_event_type,unknown event_type 'hover_over',"{""event_id"": ""e00000065"", ""user_id"": ""u00003"", ""event_type"": ""hover_over"", ""event_ts"": ""2026-01-19T05:59:34Z"", ""page_url"": ""/x""}"
+run_20261028T054352_8dd045,events.csv,65,duplicate_event,event_id already loaded from events.csv:64,"{""event_id"": ""e00000017"", ""user_id"": ""u00003"", ""event_type"": ""page_view"", ""event_ts"": ""2026-01-14T16:21:49+05:30"", ""page_url"": ""/p/16""}"
+run_20261028T054352_8dd045,events.csv,67,invalid_reference_key,user_id 'u_ghost' not in dim_users,"{""event_id"": ""e00000064"", ""user_id"": ""u_ghost"", ""event_type"": ""click"", ""event_ts"": ""2026-01-16T16:01:53Z"", ""page_url"": ""/x""}"

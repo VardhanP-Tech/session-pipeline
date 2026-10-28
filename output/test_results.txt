@@ -1,0 +1,46 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.7.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/session-pipeline
+collecting ... collected 38 items
+
+tests/test_pipeline.py::test_happy_path PASSED                           [  2%]
+tests/test_pipeline.py::test_empty_header_only_and_zero_byte_files PASSED [  5%]
+tests/test_pipeline.py::test_malformed_and_null_rows_are_quarantined_with_source_line PASSED [  7%]
+tests/test_pipeline.py::test_in_file_duplicates_and_conflicting_duplicates PASSED [ 10%]
+tests/test_pipeline.py::test_cross_file_duplicate_is_rejected_not_double_counted PASSED [ 13%]
+tests/test_pipeline.py::test_boundary_values_through_pipeline PASSED     [ 15%]
+tests/test_pipeline.py::test_out_of_order_within_file PASSED             [ 18%]
+tests/test_pipeline.py::test_late_arriving_event_in_later_file_merges_sessions PASSED [ 21%]
+tests/test_pipeline.py::test_rerun_same_input_is_idempotent PASSED       [ 23%]
+tests/test_pipeline.py::test_schema_change_missing_required_column_fails_run_and_loads_nothing PASSED [ 26%]
+tests/test_pipeline.py::test_unexpected_extra_column_is_ignored_but_reported PASSED [ 28%]
+tests/test_pipeline.py::test_header_is_case_and_whitespace_insensitive PASSED [ 31%]
+tests/test_pipeline.py::test_partial_failure_rolls_back_then_retry_succeeds PASSED [ 34%]
+tests/test_pipeline.py::test_metrics_file_written PASSED                 [ 36%]
+tests/test_pipeline.py::test_end_to_end_against_generator_ground_truth PASSED [ 39%]
+tests/test_pipeline.py::test_generator_is_reproducible PASSED            [ 42%]
+tests/test_pipeline.py::test_reject_raw_record_labels_extra_fields PASSED [ 44%]
+tests/test_sessionize.py::test_happy_path_two_sessions PASSED            [ 47%]
+tests/test_sessionize.py::test_boundary_gap_equal_to_timeout_stays_in_session PASSED [ 50%]
+tests/test_sessionize.py::test_boundary_gap_one_microsecond_over_splits PASSED [ 52%]
+tests/test_sessionize.py::test_out_of_order_input_gives_same_result_as_sorted PASSED [ 55%]
+tests/test_sessionize.py::test_same_timestamp_events_tiebreak_by_event_id_deterministically PASSED [ 57%]
+tests/test_sessionize.py::test_users_never_mix PASSED                    [ 60%]
+tests/test_sessionize.py::test_single_event_session_has_zero_duration_and_empty_input_ok PASSED [ 63%]
+tests/test_sessionize.py::test_session_id_deterministic PASSED           [ 65%]
+tests/test_validation.py::test_nulls_rejected[event_id-missing_required_field] PASSED [ 68%]
+tests/test_validation.py::test_nulls_rejected[user_id-missing_required_field] PASSED [ 71%]
+tests/test_validation.py::test_nulls_rejected[event_type-missing_required_field] PASSED [ 73%]
+tests/test_validation.py::test_nulls_rejected[event_ts-missing_timestamp] PASSED [ 76%]
+tests/test_validation.py::test_invalid_timestamps[yesterday] PASSED      [ 78%]
+tests/test_validation.py::test_invalid_timestamps[2026-13-45T00:00:00Z] PASSED [ 81%]
+tests/test_validation.py::test_invalid_timestamps[2026-01-01] PASSED     [ 84%]
+tests/test_validation.py::test_invalid_timestamps[1700000000] PASSED     [ 86%]
+tests/test_validation.py::test_out_of_range_timestamp PASSED             [ 89%]
+tests/test_validation.py::test_timezone_normalised_to_utc_and_naive_is_utc PASSED [ 92%]
+tests/test_validation.py::test_event_type_case_insensitive_and_unknown_rejected PASSED [ 94%]
+tests/test_validation.py::test_reference_key PASSED                      [ 97%]
+tests/test_validation.py::test_malformed_extra_and_short_rows PASSED     [100%]
+
+============================== 38 passed in 0.38s ==============================

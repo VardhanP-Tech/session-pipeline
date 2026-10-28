@@ -1,0 +1,30 @@
+{
+  "run_id": "run_20261028T053133_448a2b",
+  "source_file": "events.csv",
+  "status": "SUCCEEDED",
+  "started_at": "2026-10-28T05:31:33.897023Z",
+  "ended_at": "2026-10-28T05:31:33.923765Z",
+  "duration_seconds": 0.0285,
+  "file_sha256": "551e52ecad12cd1d348773a69add96e413ca5ed73f71fd3567ad47d896a00395",
+  "input_rows": 67,
+  "accepted_new": 60,
+  "replayed": 0,
+  "rejected": 7,
+  "rejects_by_reason": {
+    "duplicate_event": 1,
+    "invalid_event_type": 1,
+    "invalid_reference_key": 1,
+    "invalid_timestamp": 1,
+    "malformed_record": 1,
+    "missing_required_field": 1,
+    "missing_timestamp": 1
+  },
+  "users_affected": 6,
+  "sessions_written": 11,
+  "unexpected_columns": [],
+  "stage_seconds": {
+    "ingest_validate_load": 0.005,
+    "sessionize": 0.0013
+  },
+  "error": null
+}

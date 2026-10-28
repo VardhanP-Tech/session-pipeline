@@ -1,0 +1,42 @@
+### 1. Sessions per user and average session length
+user_id | sessions | avg_duration_s | events
+u00001 | 2 | 10605.5 | 23
+u00002 | 2 | 862.0 | 3
+u00003 | 2 | 4092.5 | 10
+u00004 | 2 | 2945.0 | 8
+u00005 | 2 | 4660.5 | 15
+u00006 | 1 | 0.0 | 1
+
+### 2. Source-to-target reconciliation per run
+run_id | status | input_rows | accepted_new | replayed | rejected | reconciles
+run_20261028T053133_448a2b | SUCCEEDED | 67 | 60 | 0 | 7 | 1
+run_20261028T053133_12e3ef | SUCCEEDED | 67 | 0 | 60 | 7 | 1
+run_20261028T053134_b13c6a | FAILED | 0 | 0 | 0 | 0 | 1
+
+### 3. Reject breakdown, traceable to the source line
+reason | n | example
+duplicate_event | 1 | events.csv:65
+invalid_event_type | 1 | events.csv:62
+invalid_reference_key | 1 | events.csv:67
+invalid_timestamp | 1 | events.csv:61
+malformed_record | 1 | events.csv:50
+missing_required_field | 1 | events.csv:25
+missing_timestamp | 1 | events.csv:6
+
+### 4. Events that belong to a given session
+event_id | event_ts | event_type
+e00000001 | 2026-01-06T13:17:24.000000Z | purchase
+e00000002 | 2026-01-06T13:31:49.000000Z | page_view
+e00000003 | 2026-01-06T14:01:49.000000Z | click
+e00000004 | 2026-01-06T14:22:22.000000Z | page_view
+e00000005 | 2026-01-06T14:46:49.000000Z | login
+e00000006 | 2026-01-06T15:01:09.000000Z | click
+e00000007 | 2026-01-06T15:10:39.000000Z | logout
+e00000008 | 2026-01-06T15:36:34.000000Z | logout
+e00000009 | 2026-01-06T15:51:00.000000Z | search
+e00000010 | 2026-01-06T15:58:21.000000Z | logout
+
+### 5. Gap rule check: no session may contain a gap > 1800s (expect 0 rows)
+session_id
+(0 rows)
+

@@ -1,0 +1,8 @@
+reason,count
+duplicate_event,1
+invalid_event_type,1
+invalid_reference_key,1
+invalid_timestamp,1
+malformed_record,1
+missing_required_field,1
+missing_timestamp,1

@@ -1,0 +1,2 @@
+# Runtime uses only the Python standard library (3.10+; developed on 3.12, SQLite >= 3.25 for window functions).
+pytest>=7.0   # tests only

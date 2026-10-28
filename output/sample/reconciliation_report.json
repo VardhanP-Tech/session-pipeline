@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-10-28T05:43:52.230559+00:00",
+  "passed": true,
+  "events": 60,
+  "sessions": 11,
+  "rejects_by_reason": {
+    "duplicate_event": 1,
+    "invalid_event_type": 1,
+    "invalid_reference_key": 1,
+    "invalid_timestamp": 1,
+    "malformed_record": 1,
+    "missing_required_field": 1,
+    "missing_timestamp": 1
+  },
+  "checks": [
+    {
+      "check": "event_id_unique",
+      "passed": true,
+      "detail": "60 events"
+    },
+    {
+      "check": "sum(session.event_count) == count(events_clean)",
+      "passed": true,
+      "detail": "60 vs 60"
+    },
+    {
+      "check": "every_event_has_a_session",
+      "passed": true,
+      "detail": "events with NULL session_id = 0"
+    },
+    {
+      "check": "session_count_and_bounds_match_events",
+      "passed": true,
+      "detail": "mismatching sessions = 0"
+    },
+    {
+      "check": "gap_rule_holds_(window-function check)",
+      "passed": true,
+      "detail": "violations = 0"
+    },
+    {
+      "check": "referential_integrity_events->dim_users",
+      "passed": true,
+      "detail": "orphans = 0"
+    },
+    {
+      "check": "per_run_source_to_target_counts",
+      "passed": true,
+      "detail": "unreconciled runs = []"
+    }
+  ],
+  "ground_truth_comparison": {
+    "expected_sessions": 11,
+    "actual_sessions": 11,
+    "missing": [],
+    "unexpected": [],
+    "sessions_match": true,
+    "expected_rejects": {
+      "duplicate_event": 1,
+      "invalid_event_type": 1,
+      "invalid_reference_key": 1,
+      "invalid_timestamp": 1,
+      "malformed_record": 1,
+      "missing_required_field": 1,
+      "missing_timestamp": 1
+    },
+    "actual_rejects": {
+      "duplicate_event": 1,
+      "invalid_event_type": 1,
+      "invalid_reference_key": 1,
+      "invalid_timestamp": 1,
+      "malformed_record": 1,
+      "missing_required_field": 1,
+      "missing_timestamp": 1
+    },
+    "rejects_match": true
+  }
+}
