@@ -1,6 +1,6 @@
 # Clickstream Sessionization Pipeline
 
-Turns raw click/app events (CSV) into user **sessions** using event-time gaps (default 30 min), handling out-of-order and late data, duplicates, missing/invalid timestamps and boundary gaps. Python standard library + SQLite; pytest for tests. Developed and tested on Python 3.12 (3.10+ expected to work, not verified).
+Turns raw click/app events (CSV) into user **sessions** using event-time gaps (default 30 min), handling out-of-order and late data, duplicates, missing/invalid timestamps and boundary gaps. Python standard library + SQLite; pytest for tests. Developed and Tested locally on Python 3.13.
 
 ## Quick start (clean environment)
 ```bash
