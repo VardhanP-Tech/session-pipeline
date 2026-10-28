@@ -7,8 +7,7 @@ Turns raw click/app events (CSV) into user **sessions** using event-time gaps (d
 pip install -r requirements.txt            # only pytest, for tests
 python -m pytest -q                        # 38 tests
 python -m sessionization.cli generate --out-dir data/sample --events 60 --users 6 --seed 42
-python -m sessionization.cli run --input data/sample/events.csv --users data/sample/users.csv \
-       --db output/sample/sessions.db --output-dir output/sample --labels-dir data/sample/labels
+python -m sessionization.cli run --input data/sample/events.csv --users data/sample/users.csv --db output/sample/sessions.db --output-dir output/sample --labels-dir data/sample/labels
 python scripts/run_sample_queries.py output/sample/sessions.db   # runs sql/sample_queries.sql
 python scripts/benchmark.py 100000         # larger run + performance table
 ```
