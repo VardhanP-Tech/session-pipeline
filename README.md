@@ -48,7 +48,7 @@ Naming: `run_id` = `run_<UTC>_<hex>`, `source_file` = file basename (must be uni
 
 ## Evidence (in this repo)
 - `output/test_results.txt` – full pytest log, 38 tests passing (happy path, empty, malformed, duplicates, nulls, boundaries, out-of-order, late-arriving, schema change, rerun, fault-injection retry, generator ground truth).
-- `output/sample/` – `sample_query_results.txt` (output of the sample queries), `sessions.csv`, `rejects.csv`, `reconciliation_report.md/json`, `runs/*.json` (run metrics), (the SQLite file is created when you run the pipeline and is not shipped; running it on a fresh machine gives `new=60 replayed=0 rejected=7`). Run history in the DB contains a successful run, an idempotent rerun, and a FAILED schema-change run).
+- `output/sample/` – Contains `sample_query_results.txt`, `sessions.csv`, `rejects.csv`, `reconciliation_report.md`, `reconciliation_report.json`, and `runs/*.json` for recorded run metrics. The SQLite database is generated when the pipeline runs and is not included in the repository. On a fresh run with the sample input, the expected counts are 60 new events, 7 rejected rows, and 11 sessions. Replaying the same input should identify the 60 events as replays rather than inserting them again.
 - `data/sample/` – inputs; `data/sample/labels/` – expected answers kept separate; pipeline output matches them exactly (sessions and reject counts).
 - `output/benchmark_results.txt` – 100k-event timings (≈23k–32k rows/s; batch size has only a small effect, the per-event session_id UPDATE is the hotspot).
 
