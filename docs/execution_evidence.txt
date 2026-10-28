@@ -137,9 +137,7 @@ The sample output directory contained:
 
 9. SETUP NOTE
 -------------
-The virtual environment was created and activated. An accidental second
-attempt to create the same venv reported a launcher-copy error; installation
-and subsequent test execution nevertheless succeeded. For a clean setup,
+The virtual environment was created and activated. For a clean setup,
 create the virtual environment only once, activate it, install requirements,
 and run the tests.
 
