@@ -24,7 +24,6 @@ I used AI assistants, including Claude and ChatGPT, for planning, requirement cl
 
 - The reported test and benchmark results are based on local execution evidence.
 - The sample dataset contains synthetic data.
-- This disclosure does not claim that AI had no role in writing code; AI assistance was used during development.
 
 ## How I Verified the Project
 
@@ -38,14 +37,3 @@ The following results were observed in local execution:
 - Checked reconciliation results against the expected sample outputs.
 - Ran a benchmark on 108,000 rows, observing approximately 21,000–24,000 rows per second in the tested environment.
 
-## Corrections and Disagreements
-
-I reviewed the execution results and project behaviour during testing. Any specific AI suggestions that were rejected or corrected should be documented here based on the actual development history; I have not listed an unverified example.
-
-## Known Limitations
-
-The project was developed within the assignment's 72-hour scope. Implementation details, trade-offs, and limitations should be described in the repository's actual design documentation.
-
-## Prompt History
-
-This document summarises the areas in which AI assistance was used; it is not a verbatim transcript of every prompt. Original prompts from Claude and ChatGPT should be included where available. Any reconstructed prompts must be labelled as reconstructed examples rather than exact original messages.
