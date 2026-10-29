@@ -1,0 +1,51 @@
+# AI Use Disclosure
+
+**Project:** Clickstream Sessionization Pipeline (Data Engineering Assignment)  
+**Author:** [Your name]  
+**Date:** 2026-10-29
+
+## Summary
+
+I used AI assistants, including Claude and ChatGPT, for planning, requirement clarification, implementation guidance, troubleshooting, and documentation support during this assignment. I reviewed the project, ran the pipeline and tests locally, examined the outputs, and prepared the repository for submission. I am responsible for understanding the final implementation, its design decisions, and its limitations.
+
+## Where AI Was Used
+
+| Area | How AI was used | My contribution |
+|---|---|---|
+| Requirements analysis | Helped break down the assignment brief and identify deliverables. | Reviewed the requirements and checked the repository against them. |
+| Pipeline design | Discussed sessionization architecture and the 30-minute inactivity rule. | Reviewed the implementation and its session boundary behaviour. |
+| Idempotency | Discussed duplicate handling and safe reruns. | Ran the pipeline more than once and checked replay results. |
+| Project structure | Assisted with ideas for repository organisation, sample data, and benchmark scripts. | Reviewed the repository structure and prepared it for submission. |
+| Validation strategy | Discussed automated tests, expected outputs, and reconciliation checks. | Ran the tests and examined the resulting reports. |
+| Code | AI assistance was used during project development; the exact extent of AI-generated code should be described based on the actual development history. | Reviewed and ran the available implementation and checked its behaviour. |
+| Documentation | Assisted with README wording, project explanations, and submission documentation. | Reviewed the documentation for consistency with the project. |
+
+## What AI Did Not Do
+
+- The reported test and benchmark results are based on local execution evidence.
+- The sample dataset contains synthetic data.
+- This disclosure does not claim that AI had no role in writing code; AI assistance was used during development.
+
+## How I Verified the Project
+
+The following results were observed in local execution:
+
+- Ran the automated test suite: **38 tests passed**.
+- Processed 67 sample input rows: 60 accepted events and 7 rejected records.
+- Generated 11 sessions from the accepted sample events.
+- Replayed the input and observed 0 new events, with 60 events identified as replays.
+- Tested an input with a missing `event_ts` column and observed the expected schema failure.
+- Checked reconciliation results against the expected sample outputs.
+- Ran a benchmark on 108,000 rows, observing approximately 21,000–24,000 rows per second in the tested environment.
+
+## Corrections and Disagreements
+
+I reviewed the execution results and project behaviour during testing. Any specific AI suggestions that were rejected or corrected should be documented here based on the actual development history; I have not listed an unverified example.
+
+## Known Limitations
+
+The project was developed within the assignment's 72-hour scope. Implementation details, trade-offs, and limitations should be described in the repository's actual design documentation.
+
+## Prompt History
+
+This document summarises the areas in which AI assistance was used; it is not a verbatim transcript of every prompt. Original prompts from Claude and ChatGPT should be included where available. Any reconstructed prompts must be labelled as reconstructed examples rather than exact original messages.
